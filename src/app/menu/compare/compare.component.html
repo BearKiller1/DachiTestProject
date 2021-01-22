@@ -1,0 +1,28 @@
+<p>compare works!</p>
+
+{{GetAll()}}
+<div class="sideMenu" *ngFor="let item of prodList">
+    <p (click)="GetProdByName(item.name);" style="cursor: pointer;">{{item.name}}</p>
+    <Button [routerLink]="['./detail', item.name]">Go</Button>
+</div>
+<div *ngIf='output'>
+    This is Compare I 
+    <br>
+    Name - {{prodDetail.name}}
+    <br>
+    Price - {{prodDetail.price}}
+    <br>
+    MP - {{prodDetail.mp}}
+</div>
+<div *ngIf='output2'>
+    This is Compare II
+    <br>
+    Name - {{prodDetail2.name}}
+    <br>
+    Price - {{prodDetail2.price}}
+    <br>
+    MP - {{prodDetail2.mp}}
+</div>
+<div class='outlet'>
+    <router-outlet></router-outlet>
+</div>
